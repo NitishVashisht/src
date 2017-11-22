@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../src/app/app.component.css";
+@import "../src/app/importable.css";
+
+.SecondCssClass{
+    font-family: 'Times New Roman';
+    font-style: Times normal;
+    align-self: auto;
+    font-size: 40px;
+}
+
+.SpanClass{
+    font-size: 40px; 
+    background-color: rgb(153, 151, 51) ;
+}
+
+h2{
+    color: blue;
+    font-family: 'Times New Roman';
+}
+
+body {
+    background-image: url('../src/app/mount.png');
+    background-size: 1400px 1000px;
+} 
+
+#FirstId{
+    color: rgb(247, 73, 4);
+    font-size: 40px;
+}

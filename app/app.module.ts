@@ -1,0 +1,31 @@
+import { AuthorsService } from './authors.service';
+import { AuthorsComponent } from './authors/authors.component';
+import { CourseService } from './course.service';
+import { CourseComponent } from './course.component';
+import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ClassbindingComponent } from './classbinding/classbinding.component';
+import { EventbindingComponent } from './eventbinding/eventbinding.component';
+import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CoursesComponent,
+    CourseComponent,
+    AuthorsComponent,
+    ClassbindingComponent,
+    EventbindingComponent,
+    TwowaybindingComponent
+  ],
+  imports: [
+    BrowserModule,FormsModule
+  ],
+  providers: [CourseService,AuthorsService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
