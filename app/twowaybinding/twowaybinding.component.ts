@@ -12,11 +12,12 @@ the value in the UI will always be synced back to the domain model in your class
 
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-twowaybinding',
   //templateUrl: './twowaybinding.component.html',
   //styleUrls: ['./twowaybinding.component.css']
-template: 
+template:
 `
   <div>
   <input [value] = "email" (keyup.enter) = "email = $event.target.value;onPressed() " />

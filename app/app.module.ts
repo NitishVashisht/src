@@ -3,14 +3,14 @@ import { AuthorsComponent } from './authors/authors.component';
 import { CourseService } from './course.service';
 import { CourseComponent } from './course.component';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ClassbindingComponent } from './classbinding/classbinding.component';
 import { EventbindingComponent } from './eventbinding/eventbinding.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
+import { LearningpipesComponent } from './learningpipes/learningpipes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component'
     AuthorsComponent,
     ClassbindingComponent,
     EventbindingComponent,
-    TwowaybindingComponent
+    TwowaybindingComponent,
+    LearningpipesComponent
   ],
   imports: [
     BrowserModule,FormsModule
