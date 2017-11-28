@@ -14,6 +14,9 @@
   symbol will be there also we can supply third argument that is again decimal point one.
   In case of date we can use date pipe along with argument which will be format of date there are 
   so many formats of date that can be checked on angular website
+  For percent pipe two arguments can be given first is as same as decimal also we have to use number 
+  divide by 100 every time we want to take percentage.
+  marks : .75, output will be 75%
 
 */
 import { Component, OnInit } from '@angular/core';
@@ -28,7 +31,7 @@ export class LearningpipesComponent{
 pip={
   salary: 19000,
   name : 'NitisH_VashishT' ,
-  marks : 75,
+  marks : .75,
   pivalue: 4.245678,
   date: new Date(2017,10,24)
 }

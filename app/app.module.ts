@@ -1,3 +1,4 @@
+import { starpipe, summarypipe } from './learningpipes/custom.pipe';
 import { AuthorsService } from './authors.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { CourseService } from './course.service';
@@ -21,7 +22,9 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
     ClassbindingComponent,
     EventbindingComponent,
     TwowaybindingComponent,
-    LearningpipesComponent
+    LearningpipesComponent,
+    starpipe,
+    summarypipe
   ],
   imports: [
     BrowserModule,FormsModule

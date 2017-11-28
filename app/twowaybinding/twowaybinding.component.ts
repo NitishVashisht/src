@@ -26,6 +26,7 @@ template:
   </div>
 `
 })
+
 export class TwowaybindingComponent {
 email:string='abc@xyz.com';
 onPressed(){

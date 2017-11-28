@@ -1,12 +1,14 @@
 <div>
+
 <h1 class = 'SecondCssClass'>uppercase pipe {{pip.name|uppercase}} </h1>
 <h1 class = 'SecondCssClass'>lower case pipe {{pip.name|lowercase}}</h1>
 <h1 class = 'SecondCssClass'>Number pipe {{pip.pivalue|number}}</h1>
 <h1 class = 'SecondCssClass'>Number pipe with arguments {{pip.pivalue|number:'2.2-2'}}</h1>
 <h1 class = 'SecondCssClass'>Number pipe {{pip.salary|number}}</h1>
-<!--h1 class = 'SecondCssClass'>currency pipe {{pip.salary|currency:'IN'}}</h1> error as in is 
-not a valid currency code. -->
 <h1 class = 'SecondCssClass'>currency pipe {{pip.salary|currency:'INR':true}}</h1>
 <p class = 'SecondCssClass'>Date pipe: {{pip.date | date:'mediumDate'}}</p>
-
+<h1 class = 'SecondCssClass'>percent pipe {{pip.marks|percent:'2.2-2'}}</h1>
+<h1 class = 'SecondCssClass'>starandsummarycustompipe : - {{pip.name|stars:'i' | summary:5}}</h1>
+<!--h1 class = 'SecondCssClass'>currency pipe {{pip.salary|currency:'IN'}}</h1> error as in is 
+not a valid currency code. -->
 </div>
