@@ -1,3 +1,4 @@
+import { custommodule } from './custom.module';
 import { starpipe, summarypipe } from './learningpipes/custom.pipe';
 import { AuthorsService } from './authors.service';
 import { AuthorsComponent } from './authors/authors.component';
@@ -27,7 +28,7 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
     summarypipe
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,custommodule
   ],
   providers: [CourseService,AuthorsService],
   bootstrap: [AppComponent]
