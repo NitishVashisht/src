@@ -1,3 +1,4 @@
+import { concatinationPipe } from './concatination.pipe';
 /* 
   example of implementation of inbuilt pipes
   there are some pipes that can take arguments as well like number pipe for decimal places 
@@ -20,6 +21,7 @@
 
 */
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'learningpipes',
