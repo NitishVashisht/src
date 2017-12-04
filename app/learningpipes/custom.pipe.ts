@@ -1,6 +1,6 @@
 /*
 
-Multiple custom pipes in one file example also Pipe and PipeTransform is interfaces define in 
+Multiple custom pipes in one file example also Pipe and PipeTransform are interfaces defined in 
 angular core library pipe decorator can have two properties one is Name: string other Pure?:boolean
 
 */
@@ -17,8 +17,7 @@ export class starpipe implements PipeTransform{
         if(!value){
             return value;
         }
-         let character:string = argument;
-        return value.replace(character,'*')
+        return value.replace(argument,'*')
     }
 
 }
@@ -40,5 +39,26 @@ export class summarypipe implements PipeTransform{
         let a = argument;
         return (value.substr(0,a) + '...');
     }
+}
 
+@Pipe({
+    name: 'casing'
+})
+
+export class titlecasePipe implements PipeTransform{
+    transform (value:string,arg:string):any{
+        if(!value){
+            return value;
+        }
+
+        else if(arg=='U'){ //for uper casing
+            return (value.toLocaleUpperCase()); }
+
+        else if(arg=='L'){ //for lower casing 
+                return (value.toLocaleLowerCase());
+
+        // i have to add other casings as well like title casing 
+        }
+
+    }
 }

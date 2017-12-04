@@ -1,5 +1,5 @@
 import { custommodule } from './custom.module';
-import { starpipe, summarypipe } from './learningpipes/custom.pipe';
+import { starpipe, summarypipe, titlecasePipe } from './learningpipes/custom.pipe';
 import { AuthorsService } from './authors.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { CourseService } from './course.service';
@@ -25,7 +25,8 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
     TwowaybindingComponent,
     LearningpipesComponent,
     starpipe,
-    summarypipe
+    summarypipe,
+    titlecasePipe
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
