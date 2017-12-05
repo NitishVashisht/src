@@ -23,7 +23,7 @@ template:
   <input [value] = "email" (keyup.enter) = "email = $event.target.value;onPressed() " />
   <input [(ngModel)] = "email"/>
   <button class = "btn btn-danger" (click)= "onPressed()">Enter</button>
-  <h1 class = 'SecondCssClass'>{{email|uppercase}} </h1>
+  <h1 class = 'SecondCssClass'>{{email|casings:'U'}} </h1>
   </div>
 `
 })

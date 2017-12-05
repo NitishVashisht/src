@@ -42,7 +42,7 @@ export class summarypipe implements PipeTransform{
 }
 
 @Pipe({
-    name: 'casing'
+    name: 'casings'
 })
 
 export class titlecasePipe implements PipeTransform{
