@@ -1,3 +1,4 @@
+import { outputPropertyComponent } from './input_output_propeties/outputproperty.component';
 import { inputpropertyComponent } from './input_output_propeties/inputproperty.component';
 import { custommodule } from './custom.module';
 import { starpipe, summarypipe, titlecasePipe } from './learningpipes/custom.pipe';
@@ -28,7 +29,8 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
     starpipe,
     summarypipe,
     titlecasePipe,
-    inputpropertyComponent
+    inputpropertyComponent,
+    outputPropertyComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
