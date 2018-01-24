@@ -22,6 +22,7 @@
   <button class = "btn" [class.btn-danger] = "isActive">Down</button>
   <cssclassbinding>
   </cssclassbinding>
+  
 <!--
   <courses>       
   </courses>
@@ -31,12 +32,17 @@
 
   <learningpipes> </learningpipes>
 -->
+<div>
+    <iframe id='widget-ticker-preview' 
+    src='//www.coingecko.com/en/widget_component/ticker/tron/btc?id=tron' 
+    style='border:none; height:90px; width: 200px;' scrolling='no' 
+    frameborder='0' allowTransparency='true'></iframe>
+</div>
 
   <inputproperty [isActive] = "isActiveroot" [isActive1] = "isActiveroot"
    [input-allias] = "isActiveroot">
   </inputproperty>  
   <outputproperty (paint) = "onPaint()"></outputproperty>
   <button class = "btn" class.btn-danger = "{{isActive}}"> Up </button>
-  
 </body>
 
