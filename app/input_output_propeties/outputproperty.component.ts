@@ -25,12 +25,6 @@ so from emit control will come here and then onPaint method of app.component.ts 
 8. for a component decorator selector and template are mendotary
 */
 
-export interface yoyoyo {
-    yo1:1,
-    yo2:"yointerface"
-
-}
-
 import {Component,Output,EventEmitter} from "@angular/core" ;
 
 @Component({
@@ -46,14 +40,13 @@ import {Component,Output,EventEmitter} from "@angular/core" ;
 export class outputPropertyComponent{
 
     @Output('paint') write = new EventEmitter();
-   // @Output('Colored') colored = new EventEmitter();
 
     red:boolean = true;
     myobject= {
         attr1:1,
         attr2:"Nitish vashisht"
     }
-    myyo:yoyoyo;
+    
     writeMethod(): any {
         console.log("inside the writeMethod()");
         this.write.emit();
