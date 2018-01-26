@@ -34,7 +34,20 @@ import {Component,Output,EventEmitter} from "@angular/core" ;
     <h1 class = "SecondCssClass"> Click here for outputproperty </h1>
     <h1 class = "SecondCssClass" (click) = "writeMethod3()"> outputproperty with passing event data </h1> 
     </div>
-    `
+    ` ,
+   styles:[
+       `
+        .SecondCssClass{
+            font-family: 'Times New Roman';
+            font-style: Times normal;
+            align-self: auto;
+            font-size: 40px;
+            color:rgb(255, 0, 0);
+        }
+        
+        `
+    ]
+    
 })
 
 export class outputPropertyComponent{
@@ -85,6 +98,7 @@ export class outputPropertyComponent{
 
 
 /*
+
 let instance = new outputPropertyComponent();
 instance.writeMethod2();
  

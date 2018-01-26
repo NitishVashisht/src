@@ -15,6 +15,7 @@ import { ClassbindingComponent } from './classbinding/classbinding.component';
 import { EventbindingComponent } from './eventbinding/eventbinding.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
 import { LearningpipesComponent } from './learningpipes/learningpipes.component';
+import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
     summarypipe,
     titlecasePipe,
     inputpropertyComponent,
-    outputPropertyComponent
+    outputPropertyComponent,
+    PriorityofstylesComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
