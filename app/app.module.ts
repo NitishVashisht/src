@@ -1,3 +1,6 @@
+import { NoneComponent } from './View_encapsulation&shadow_dom/none.component';
+import { EmulatedComponent } from './View_encapsulation&shadow_dom/emulated.component';
+import { NativeComponent } from './View_encapsulation&shadow_dom/native.component';
 import { outputPropertyComponent } from './input_output_propeties/outputproperty.component';
 import { inputpropertyComponent } from './input_output_propeties/inputproperty.component';
 import { custommodule } from './custom.module';
@@ -32,7 +35,10 @@ import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.c
     titlecasePipe,
     inputpropertyComponent,
     outputPropertyComponent,
-    PriorityofstylesComponent
+    PriorityofstylesComponent,
+    NativeComponent,
+    EmulatedComponent,
+    NoneComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
