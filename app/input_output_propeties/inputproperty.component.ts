@@ -8,6 +8,7 @@ import { Component,Input } from '@angular/core';
     <h1 [class.SecondCssClass] = "isActive" > yo mofo </h1> 
     <h1 [class.SecondCssClass] = "isActive1" > no mofo </h1>
     <h1 [class.SecondCssClass] = "isActive2" > lo mofo </h1>
+    <div> {{htmlstring}}</div>
 
     `
     ,
@@ -21,6 +22,8 @@ export class inputpropertyComponent {
 
 @Input () isActive : boolean;
 @Input ('input-allias') isActive2 : boolean;
+@Input () htmlstring:string;
+
    isActive1:boolean;
    printValues(){
    console.log("Value of isActive :" + this.isActive + "value of isActive1 :" + this.isActive1);

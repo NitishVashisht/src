@@ -19,6 +19,7 @@ import { EventbindingComponent } from './eventbinding/eventbinding.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
 import { LearningpipesComponent } from './learningpipes/learningpipes.component';
 import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.component';
+import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel/bootstrap-panel.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.c
     PriorityofstylesComponent,
     NativeComponent,
     EmulatedComponent,
-    NoneComponent
+    NoneComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule

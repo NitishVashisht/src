@@ -20,10 +20,12 @@
 </ul> -->
 <body>
   <button class = "btn" [class.btn-danger] = "isActive">Down</button>
+ 
+<!-- functionality of css class binding along with pipes  
   <cssclassbinding>
   </cssclassbinding>
   
-<!--
+
   <courses>       
   </courses>
   i have commented it as i have already understood the functionality.
@@ -32,17 +34,23 @@
 
   <learningpipes> </learningpipes>
 -->
+
 <div>
     <iframe id='widget-ticker-preview' 
     src='//www.coingecko.com/en/widget_component/ticker/tron/btc?id=tron' 
     style='border:none; height:90px; width: 200px;' scrolling='no' 
     frameborder='0' allowTransparency='true'></iframe>
 </div>
+
+
   <!--Implementation of input and output property 
 
   <inputproperty [isActive] = "isActiveroot" [isActive1] = "isActiveroot"
    [input-allias] = "isActiveroot">
   </inputproperty>  
+
+  <inputproperty [htmlstring] = "htmlstring">
+  </inputproperty>
   
   <outputproperty (paint) = "onPaint($event)"></outputproperty>
   <button class = "btn" class.btn-danger = "{{isActive}}"> Up </button>
@@ -54,5 +62,14 @@
   <native></native>
   <none></none>
   -->
+
+  <div>
+    <bootstrap-panel>
+     <h1 class = "heading">header</h1>
+     <section><h1>body</h1></section>
+     <ng-container class="foo">something here</ng-container>
+    </bootstrap-panel>
+  </div>
+  
 </body>
 
