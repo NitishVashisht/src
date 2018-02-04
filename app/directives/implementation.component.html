@@ -1,0 +1,51 @@
+<div *ngIf = "truthy"> <!--the value of *ngIf directive should be true doesnot matter if
+                        "" contains expression or method of anything-->
+<h2 class= "SecondCssClass"> Now the value of *ngIF is true </h2>
+</div>
+
+<!--below div is hidden so will not be projected to user but still can be seen in the 
+code in developer tools or we can say that its still in dom it will still take memory
+and computing resource-->
+
+<div hidden>
+<h2 class =  "SecondCssClass">this shit is hidden</h2>
+</div>
+
+<!--below div is example where we can see that we can bind hidden attribute of html
+and property of dom to some value here hidden is property and attribute as well
+[hidden] works in presence of expression only-->
+
+<div [hidden] = "falsy == false">
+<h2>hidden as html attribute and dom property</h2>
+</div>
+
+<!-- below div will not be projected to user as *ngIf is false and it will not be present
+in dom so this is approach is better when our dom is having more elements thenwe can
+use this as we donot want extra computing resource and memory for element that we 
+donot want so it best to remove it from dom as well-->
+
+<div *ngIf = "falsy;then this else that "></div>
+
+<ng-template #this>hi there</ng-template>
+<ng-template #that>
+<h2 class =  "SecondCssClass">this is else part</h2> 
+</ng-template>
+
+<!--
+In case of then and else, we need to assign a local template 
+reference variable to our <ng-template> element and then conditionally ngIf will display it
+<ng-template> is an angular element for rendering HTML. 
+It is never displayed directly. It can be displayed using structural directive, 
+ViewContainerRef etc. 
+Above is example of using ng-template
+ng-template will get commented it will not get embedded in our dom elements tree -->
+
+
+<ul class = "nav nav-pills">
+    <li [class.active]="view =='map'"><a (click) = "view = 'map'">Map View</a></li>
+    <li [class.active]= "view =='list'"><a (click) = "view='list'">List View</a></li>
+</ul>
+<div [ngSwitch]="view">
+    <div *ngSwitchCase = "'map'"> map view elements</div>
+    <div *ngSwitchCase = "'list'">list view elements</div>
+</div>

@@ -1,3 +1,4 @@
+import { implementationComponent } from './directives/implementation.component';
 import { NoneComponent } from './View_encapsulation&shadow_dom/none.component';
 import { EmulatedComponent } from './View_encapsulation&shadow_dom/emulated.component';
 import { NativeComponent } from './View_encapsulation&shadow_dom/native.component';
@@ -40,7 +41,8 @@ import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel
     NativeComponent,
     EmulatedComponent,
     NoneComponent,
-    BootstrapPanelComponent
+    BootstrapPanelComponent,
+    implementationComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
