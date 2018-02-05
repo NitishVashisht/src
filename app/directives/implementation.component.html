@@ -45,7 +45,15 @@ ng-template will get commented it will not get embedded in our dom elements tree
     <li [class.active]="view =='map'"><a (click) = "view = 'map'">Map View</a></li>
     <li [class.active]= "view =='list'"><a (click) = "view='list'">List View</a></li>
 </ul>
-<div [ngSwitch]="view">
-    <div *ngSwitchCase = "'map'"> map view elements</div>
-    <div *ngSwitchCase = "'list'">list view elements</div>
-</div>
+<ul [ngSwitch]="view">
+    <li *ngSwitchCase = "'map'">
+        <div *ngFor= " let i of subjects"><h2>mapview and {{ "name of sub: "+i.name + ",Marks: " + i.marks}}</h2></div>
+    </li>
+    <li *ngSwitchCase = "'list'">
+        <div *ngFor= " let i of subjects"><h2>listview and {{ "name of sub: "+i.name + ",Marks: " + i.marks}}</h2></div></li>
+</ul>
+ <!--
+     combination of ul,li to check functionality of *ngFor and [ngSwitch],*ngSwitchCase
+     use of expression in property binding in class.active and event binding in anchor <a>
+     use of event binding not to execute event but to execute one statement of assigning value.
+ -->
