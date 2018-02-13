@@ -42,7 +42,7 @@ ng-template will get commented it will not get embedded in our dom elements tree
 
 
 <ul class = "nav nav-pills">
-    <li [class.active]="view =='map'"><a (click) = "view = 'map'">Map View</a></li>
+    <li [ngClass]= "{'active':view =='map'}"><a (click) = "view = 'map'">Map View</a></li>
     <li [class.active]= "view =='list'"><a (click) = "view='list'">List View</a></li>
 </ul>
 <ul [ngSwitch]="view">
