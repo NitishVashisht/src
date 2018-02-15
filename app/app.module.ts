@@ -21,6 +21,7 @@ import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component'
 import { LearningpipesComponent } from './learningpipes/learningpipes.component';
 import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.component';
 import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel/bootstrap-panel.component';
+import { customDirective } from './directives/custom.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel
     EmulatedComponent,
     NoneComponent,
     BootstrapPanelComponent,
-    implementationComponent
+    implementationComponent,
+    customDirective
   ],
   imports: [
     BrowserModule,FormsModule,custommodule
