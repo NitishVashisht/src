@@ -22,6 +22,7 @@ import { LearningpipesComponent } from './learningpipes/learningpipes.component'
 import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.component';
 import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel/bootstrap-panel.component';
 import { customDirective } from './directives/custom.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { customDirective } from './directives/custom.directive';
     NoneComponent,
     BootstrapPanelComponent,
     implementationComponent,
-    customDirective
+    customDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule

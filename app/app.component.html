@@ -66,6 +66,12 @@
     <impl-directives></impl-directives>
   -->
 
+<!-- Example of custom directive and how to use it as input property in same place
+  <div>
+    <input type = "text" [customdirective] = "'lower'">
+    <button class = "btn btn-danger" > Erase </button>
+  </div>
+  -->
   <div>
     <bootstrap-panel>
      <h1 class = "heading">header</h1>
@@ -75,8 +81,8 @@
   </div>
   
   <div>
-  <input type = "text" [customdirective] = "'lower'">
-  <button class = "btn btn-danger" > Erase </button>
+    <contact-form></contact-form>
   </div>
+  
 </body>
 
