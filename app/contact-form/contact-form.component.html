@@ -1,10 +1,13 @@
-<form>
+<!--this example shows how to use validations on forms along with what is form-control or form-group and what are control object-->
+
+<form class = "form-vertical">
   <div class ="form-group">
-        <label for="firstName">First Name : </label>
-        <input ngModel name= "firstName" type="text" id = "firstName" #name= "ngModel" (change)= "log(name)">
+        <label for="firstName"><h2>First Name :</h2> </label>
+        <input required ngModel name= "firstName" type="text" id = "firstName" #name= "ngModel" (change)= "log(name)">
+        <div *ngIf="!name.valid && name.touched" class="alert alert-danger">this field is requied bro</div>
   </div>
   <div class ="form-group">
-    <label for = "input">Comment :  </label>
+    <label for = "input"> <h2>Comment : </h2> </label>
     <textarea id="input" cols = "30" rows = "10" class = "form-contol"></textarea>
   </div>
   <div>
