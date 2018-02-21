@@ -14,6 +14,10 @@ we can raise an error of our choice just below this input field as
 
 ngIf is structural directive name is our template variable and .valid and .touhed are properties of control object that
 has created by angular under the hood and that we reference through our template variable.
+
+submit(x) method is implemented to raise the custom event that has been defined in ngForm directive class this custom event and output property
+is ngSubmit
+
 */
 
 import { Component, OnInit } from '@angular/core';
@@ -25,6 +29,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent {
       log(x){
+        console.log(x);
+      }
+      submit(x){
         console.log(x);
       }
 }

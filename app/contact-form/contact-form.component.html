@@ -1,16 +1,53 @@
 <!--this example shows how to use validations on forms along with what is form-control or form-group and what are control object-->
 
-<form class = "form-vertical">
-  <div class ="form-group">
+<!--even if we remove form-group class from our two divs it will not impact the view but then we will be having one formgroup
+with two form controls (first name and comment fields) but by not removing form-group class or in present scenario we have two form groups
+having one one control object each ,inside a one parent formgroup because angular applies ngForm directive to our <form> tag under the hood.
+If we have not provided the ngForm directive explicitily also ngForm directive has an output property to raise the custom event ngSubmit
+which by default gets binded with button in our form.
+
+** f.value is kind of object that can be send back to server as value of our form 
+
+** for bootstrap checkbox the input tag will be under label and div will have class as checkbox and input type will be checkbox
+
+**<p>{{f.value | json}}</p> the json pipe will convert the f.value to json object format
+
+question can nested form groups are possible ??
+-->
+<form #f = 'ngForm' (ngSubmit)= "submit(f)">
+  <!--this style here is defined on the element with this as class  ".form-control.ng-touched.ng-invalid" -->
+    <style>
+        .form-control.ng-touched.ng-invalid{
+          border: 5px solid red;
+        }
+
+    </style>
+  <div class ="form-group" >
         <label for="firstName"><h2>First Name :</h2> </label>
-        <input required ngModel name= "firstName" type="text" id = "firstName" #name= "ngModel" (change)= "log(name)">
-        <div *ngIf="!name.valid && name.touched" class="alert alert-danger">this field is requied bro</div>
+        <input class = "form-control" 
+        required minlength="4" maxlength="10" 
+        ngModel name= "firstName"
+         type="password" id = "firstName" #name= "ngModel" (change)= "log(name)">
+
+        <div *ngIf="!name.valid && name.touched" class="alert alert-danger">
+          <div *ngIf="name.errors.required" >this field is required bro</div>
+          <div *ngIf="name.errors.minlength" >minimum length should be {{name.errors.minlength.requiredLength}}</div>
+        </div>
   </div>
+
   <div class ="form-group">
-    <label for = "input"> <h2>Comment : </h2> </label>
-    <textarea id="input" cols = "30" rows = "10" class = "form-contol"></textarea>
+    <label for = "input"><h2>Comment : </h2></label>
+    <textarea class = "form-contol" required ngModel name = "input" id="input" cols = "30" rows = "10"  #input = "ngModel"></textarea>
+    <div *ngIf = "!input.valid && input.touched " class = "alert alert-danger">this field is required bro</div>"
   </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" ngModel name ="check">subscribe</label> 
+  </div>
+  <p>
+    {{f.value | json}}
+  </p>
   <div>
-    <button class="btn btn-danger">Submit</button>
+    <button class="btn btn-danger" [disabled] = "!f.valid">Submit</button>
   </div>
 </form>
