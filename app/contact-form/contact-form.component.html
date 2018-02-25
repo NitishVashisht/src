@@ -10,24 +10,39 @@ which by default gets binded with button in our form.
 
 ** for bootstrap checkbox the input tag will be under label and div will have class as checkbox and input type will be checkbox
 
-**<p>{{f.value | json}}</p> the json pipe will convert the f.value to json object format
+** <p>{{f.value | json}}</p> the json pipe will convert the f.value to json object format
 
-question can nested form groups are possible ??
+question can nested form groups are possible ?? yes
+
+** <select multiple  ngModel name="dropdownlist" id="dropdown"> here multiple property is used in case user want to do multiple selections from
+  drop down list
+
+** <select [multiple] ="input.valid"  ngModel name="dropdownlist" id="dropdown"> here mulitple property has been binded with value of 
+  input.valid input stands for template variable of element lable with name comment and if its valid then only multiple selection is possible.
+
+
+** <option *ngFor = "let i of contactMethods" value = "{{i.name}}">{{i.name}}</option>
+here value is equal to name of itterator means it is a single value in html we can bind a single string value and cannot bind complex objects
+to value it can either be id or name of object in  contactMethods array of objects, so we can only send one string back to server is needed
+but what if we need to send back an object instead of one value in that object then that time we have to use attribute directive ngValue
+<option *ngFor = "let i of contactMethods" ngValue = "{{i}}">{{i.name}}</option> in this wat we can send back complex objects as well
+but in maximum cases there will be no point of sending back the object to server
+
+
 -->
-<form #f = 'ngForm' (ngSubmit)= "submit(f)">
+<form ngForm #f = 'ngForm' (ngSubmit)= "submit(f)">
   <!--this style here is defined on the element with this as class  ".form-control.ng-touched.ng-invalid" -->
     <style>
         .form-control.ng-touched.ng-invalid{
-          border: 5px solid red;
+          border: 5px solid blueviolet;
         }
-
     </style>
   <div class ="form-group" >
         <label for="firstName"><h2>First Name :</h2> </label>
         <input class = "form-control" 
         required minlength="4" maxlength="10" 
         ngModel name= "firstName"
-         type="password" id = "firstName" #name= "ngModel" (change)= "log(name)">
+         type="password" id = "f  irstName" #name= "ngModel" (change)= "log(name)">
 
         <div *ngIf="!name.valid && name.touched" class="alert alert-danger">
           <div *ngIf="name.errors.required" >this field is required bro</div>
@@ -41,12 +56,21 @@ question can nested form groups are possible ??
     <div *ngIf = "!input.valid && input.touched " class = "alert alert-danger">this field is required bro</div>"
   </div>
 
-  <div class="checkbox">
-    <label><input type="checkbox" ngModel name ="check">subscribe</label> 
+  
+  <div class="form-group">
+    <label for="dropdown"><h2>How to Contact :   </h2> </label>
+    <select [multiple] ="input.valid"  ngModel name="dropdownlist" id="dropdown">
+      <option value=""></option>
+    <option *ngFor = "let i of contactMethods" value = "{{i.name}}">{{i.name}}</option>
+  </select>
   </div>
-  <p>
-    {{f.value | json}}
-  </p>
+
+  <div class="checkbox">
+      <label><input type="checkbox" ngModel name ="check">Subscribe</label>  
+  </div>
+
+  <h2> {{f.value | json}} </h2>
+
   <div>
     <button class="btn btn-danger" [disabled] = "!f.valid">Submit</button>
   </div>

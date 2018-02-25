@@ -18,6 +18,7 @@ has created by angular under the hood and that we reference through our template
 submit(x) method is implemented to raise the custom event that has been defined in ngForm directive class this custom event and output property
 is ngSubmit
 
+contactMethods is an array of objects currently containing two objects with two properties each.
 */
 
 import { Component, OnInit } from '@angular/core';
@@ -27,11 +28,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
+
 export class ContactFormComponent {
-      log(x){
-        console.log(x);
-      }
-      submit(x){
-        console.log(x);
-      }
+  contactMethods = [{id:1,name:'Email'},{id:2,name:'Phone'}]
+  log(x){
+    console.log(x);
+  }
+  submit(x){
+    console.log(x);
+  }
 }
