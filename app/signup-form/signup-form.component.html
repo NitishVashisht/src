@@ -1,0 +1,50 @@
+<!--
+
+*Below is the way in which we can implement validation using get accesor in our component which looks like below
+
+        get user(){
+            return this.form.get('username');
+        }
+
+        get pass(){
+            return this.form.get('password');
+        }
+
+        <div class = "alert alert-danger" *ngIf = "user.touched && user.invalid ">Username is required</div>
+        most important thing to note is form.get('username') form which is object of FormControl class has method to access any FormControl
+        defined under that group
+
+*Another way to implement validation is below one where we are not using any get or set (accessors) property defined in our component:- 
+
+        **<div class = "alert alert-danger" *ngIf = "form.get('username').touched && form.get('username').invalid ">Username is required</div>
+        here most important thing to note is form.get('username') form which is object of FormControl class has method to access any FormControl
+        defined under that group here in case we have two that are username and password.
+
+* <div *ngIf = "user.errors.noSpace || user.errors.noDot" this is how we implement custom validations  
+-->
+
+<form [formGroup] = "form">
+    <div class="form-group">
+        <label for="username"><h2>Username</h2></label>
+        <input 
+            formControlName = "username"
+            id="username" 
+            type="text" 
+            class="form-control">
+            <div class = "alert alert-danger" *ngIf = "user.touched && user.invalid "> 
+               <div *ngIf = "user.errors.required" class="alert alert-danger">username is required</div>
+                <div *ngIf = "user.errors.minlength" class="alert alert-danger">Min-length is not achieved</div>
+                <div *ngIf = "user.errors.noSpace || user.errors.noDot" class="alert alert-danger">Space or dot is not allowed in Username</div>
+            </div>
+    </div>
+
+    <div class="form-group"> 
+        <label for="password"><h2>Password</h2></label>
+        <input 
+            formControlName = "password"
+            id="password" 
+            type="text" 
+            class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>

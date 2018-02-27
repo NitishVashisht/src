@@ -6,11 +6,15 @@ having one one control object each ,inside a one parent formgroup because angula
 If we have not provided the ngForm directive explicitily also ngForm directive has an output property to raise the custom event ngSubmit
 which by default gets binded with button in our form.
 
+** if we are not using ngModel directive in our input elements then we can also not use functionality of #name = "ngModel"
+    this is basically what happens in reactive angular forms.
+    
 ** f.value is kind of object that can be send back to server as value of our form 
 
 ** for bootstrap checkbox the input tag will be under label and div will have class as checkbox and input type will be checkbox
 
-** <p>{{f.value | json}}</p> the json pipe will convert the f.value to json object format
+** <h2>{{f.value | json}}</h2> the json pipe will convert the f.value to json object format and this value comes from form template 2
+
 
 question can nested form groups are possible ?? yes
 
@@ -23,26 +27,30 @@ question can nested form groups are possible ?? yes
 
 ** <option *ngFor = "let i of contactMethods" value = "{{i.name}}">{{i.name}}</option>
 here value is equal to name of itterator means it is a single value in html we can bind a single string value and cannot bind complex objects
-to value it can either be id or name of object in  contactMethods array of objects, so we can only send one string back to server is needed
+to value it can either be id or name of object in  contactMethods array of objects, so we can only send one string back to server if needed
 but what if we need to send back an object instead of one value in that object then that time we have to use attribute directive ngValue
 <option *ngFor = "let i of contactMethods" ngValue = "{{i}}">{{i.name}}</option> in this wat we can send back complex objects as well
 but in maximum cases there will be no point of sending back the object to server
 
+** [value] is there in radio button and drop down list
 
 -->
-<form ngForm #f = 'ngForm' (ngSubmit)= "submit(f)">
-  <!--this style here is defined on the element with this as class  ".form-control.ng-touched.ng-invalid" -->
+
+<form #f = 'ngForm' (ngSubmit)= "submit(f)">
+  <!--this style here is defined, will execute on the element with this as class  ".form-control.ng-touched.ng-invalid" -->
     <style>
         .form-control.ng-touched.ng-invalid{
           border: 5px solid blueviolet;
         }
     </style>
+
+  <!--validations on input area of firstname concept-->
   <div class ="form-group" >
         <label for="firstName"><h2>First Name :</h2> </label>
         <input class = "form-control" 
         required minlength="4" maxlength="10" 
         ngModel name= "firstName"
-         type="password" id = "f  irstName" #name= "ngModel" (change)= "log(name)">
+         type="password" id = "firstName" #name= "ngModel" (change)= "log(name)">
 
         <div *ngIf="!name.valid && name.touched" class="alert alert-danger">
           <div *ngIf="name.errors.required" >this field is required bro</div>
@@ -50,27 +58,36 @@ but in maximum cases there will be no point of sending back the object to server
         </div>
   </div>
 
+   <!--validations on textarea of Comment concept-->
   <div class ="form-group">
-    <label for = "input"><h2>Comment : </h2></label>
-    <textarea class = "form-contol" required ngModel name = "input" id="input" cols = "30" rows = "10"  #input = "ngModel"></textarea>
+    <label for = "comment"><h2>Comment : </h2></label>
+    <textarea class = "form-contol" required ngModel name = "comment" id="comment" cols = "30" rows = "10"  #input = "ngModel"></textarea>
     <div *ngIf = "!input.valid && input.touched " class = "alert alert-danger">this field is required bro</div>"
   </div>
 
-  
+  <!--drop down list and how to implement it-->
   <div class="form-group">
     <label for="dropdown"><h2>How to Contact :   </h2> </label>
     <select [multiple] ="input.valid"  ngModel name="dropdownlist" id="dropdown">
       <option value=""></option>
-    <option *ngFor = "let i of contactMethods" value = "{{i.name}}">{{i.name}}</option>
+    <option *ngFor = "let i of contactMethods" value = "{{i.id}}">{{i.name}}</option>
   </select>
   </div>
-
+ 
+  <!--checkbox concept-->
   <div class="checkbox">
-      <label><input type="checkbox" ngModel name ="check">Subscribe</label>  
+      <label><input type="checkbox" ngModel name ="check" >Subscribe</label>  
+  </div>
+ 
+  <!--radio button concept-->
+  <div *ngFor = "let z of contactMethods" class="radio">
+    <label><input type = "radio" ngModel name = "radiobutton" [value] = "z.id">{{z.name}}</label>
   </div>
 
+  <!--converting value from form to json object using json inbuilt pipe concept-->
   <h2> {{f.value | json}} </h2>
 
+  <!--Button disability concept-->
   <div>
     <button class="btn btn-danger" [disabled] = "!f.valid">Submit</button>
   </div>

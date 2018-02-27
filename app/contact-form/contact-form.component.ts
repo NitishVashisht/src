@@ -12,7 +12,8 @@ we can raise an error of our choice just below this input field as
 
 <div *ngIf="!name.valid && name.touched" class="alert alert-danger">this field is requied</div>
 
-ngIf is structural directive name is our template variable and .valid and .touhed are properties of control object that
+ngIf is structural directive name is our template variable and .valid and .touched are properties of control 
+  object that
 has created by angular under the hood and that we reference through our template variable.
 
 submit(x) method is implemented to raise the custom event that has been defined in ngForm directive class this custom event and output property

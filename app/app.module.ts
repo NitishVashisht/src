@@ -11,7 +11,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { CourseService } from './course.service';
 import { CourseComponent } from './course.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
@@ -23,6 +23,7 @@ import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.c
 import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel/bootstrap-panel.component';
 import { customDirective } from './directives/custom.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import {SignupFormComponent} from './signup-form/signup-form.component'
 
 @NgModule({
   declarations: [
@@ -46,10 +47,11 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     BootstrapPanelComponent,
     implementationComponent,
     customDirective,
-    ContactFormComponent
+    ContactFormComponent,
+    SignupFormComponent
   ],
   imports: [
-    BrowserModule,FormsModule,custommodule
+    BrowserModule,FormsModule,custommodule,ReactiveFormsModule
   ],
   providers: [CourseService,AuthorsService],
   bootstrap: [AppComponent]
