@@ -28,7 +28,7 @@ import { customValidator } from './customvalidator';
 
 export class SignupFormComponent {
   form = new FormGroup({ //creating the instance of class FormGroup and then initializing the constructor with one non optional and two non optional parameters
-    'username': new FormControl('',[ Validators.required,Validators.minLength(3),customValidator.noDot,customValidator.noSpace]),
+    'username': new FormControl('',[ Validators.required,Validators.minLength(3),customValidator.noDot,customValidator.noSpace],customValidator.ifUnique),
      // using array of ValidatorFn interface types
 
     'password': new FormControl('',Validators.required) //using ValidatorFn interface type only

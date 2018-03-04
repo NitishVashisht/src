@@ -31,10 +31,12 @@
             id="username" 
             type="text" 
             class="form-control">
+            <div *ngIf = "user.pending"><h2 style='color:blue'>Checking</h2></div>
             <div class = "alert alert-danger" *ngIf = "user.touched && user.invalid "> 
                <div *ngIf = "user.errors.required" class="alert alert-danger">username is required</div>
                 <div *ngIf = "user.errors.minlength" class="alert alert-danger">Min-length is not achieved</div>
                 <div *ngIf = "user.errors.noSpace || user.errors.noDot" class="alert alert-danger">Space or dot is not allowed in Username</div>
+                <div *ngIf = "user.errors.alreadyexist" class="alert alert-danger">username already exists</div>
             </div>
     </div>
 
