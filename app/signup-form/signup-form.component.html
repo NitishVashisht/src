@@ -21,9 +21,14 @@
         defined under that group here in case we have two that are username and password.
 
 * <div *ngIf = "user.errors.noSpace || user.errors.noDot" this is how we implement custom validations  
+
+* <div class="alert alert-danger" *ngIf = "form.errors.invalid"> its a validation on form level where
+    we bind the ngSubmit event of ngForm with Login method
+     where we use this.form.setErrors{'invalid':true}) to embed the key into errors that belong to form
 -->
 
-<form [formGroup] = "form">
+<form [formGroup] = "form" #ngform = 'ngForm' (ngSubmit) = "login(ngform)">
+    <div *ngIf = "form.errors" class="alert alert-danger">invalid username or password</div>
     <div class="form-group">
         <label for="username"><h2>Username</h2></label>
         <input 

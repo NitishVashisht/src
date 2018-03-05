@@ -23,7 +23,8 @@ import { PriorityofstylesComponent } from './priorityofstyles/priorityofstyles.c
 import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel/bootstrap-panel.component';
 import { customDirective } from './directives/custom.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import {SignupFormComponent} from './signup-form/signup-form.component'
+import {SignupFormComponent} from './signup-form/signup-form.component';
+import { FormArrayComponent } from './form-array/form-array.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {SignupFormComponent} from './signup-form/signup-form.component'
     implementationComponent,
     customDirective,
     ContactFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    FormArrayComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule,ReactiveFormsModule

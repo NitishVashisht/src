@@ -1,0 +1,10 @@
+<form [formGroup] = 'form'>
+  <div class = "form-group">
+    <input #param type = 'text' class = 'form-control' (keyup.enter)="addTopics(param)">
+    <ul class = "list-group">
+      <li class = "list-group-item" *ngFor = "let i of topicarray.controls" (click)= "delete(param)">
+        {{i.value}}
+      </li>
+    </ul>
+  </div>
+</form>

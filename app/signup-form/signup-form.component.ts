@@ -17,7 +17,7 @@ We have to import AbstractControl and ValidationErrors from @angular/forms in  o
 */
 
 import { Component } from '@angular/core';
-import {FormControl,FormGroup, Validators} from '@angular/forms' //all three are classes defined in the package
+import {FormControl,FormGroup, Validators} from '@angular/forms' ; //all three are classes defined in the package
 import { customValidator } from './customvalidator';
 
 @Component({
@@ -40,6 +40,9 @@ export class SignupFormComponent {
   get pass(){
     return this.form.get('password');
   }
-
+  login(x){
+    this.form.setErrors({'rightnot':true});
+    console.log(x);
+  }
 
 }

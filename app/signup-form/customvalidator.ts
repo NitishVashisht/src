@@ -52,7 +52,9 @@ export class customValidator {
 
         return new Promise((resolve,reject) => {  //this is anonymous method's body starting after fat arrow  
             setTimeout(() => {
-                if(control.value === 'nitish'){ resolve({'alreadyexist': true});} //this key will go in errors of form cotrol object
+                if(control.value === 'nitish'){ 
+                    resolve({'alreadyexist': true});
+                } //this key will go in errors of form cotrol object
                 else
                 resolve(null); //returning null
             },2000); // setTimeout method is already defined we are just calling it inside the executor method of promise and it as an asyn                 operation
