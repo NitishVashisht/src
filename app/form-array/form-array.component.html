@@ -2,8 +2,8 @@
   <div class = "form-group">
     <input #param type = 'text' class = 'form-control' (keyup.enter)="addTopics(param)">
     <ul class = "list-group">
-      <li class = "list-group-item" *ngFor = "let i of topicarray.controls" (click)= "delete(param)">
-        {{i.value}}
+      <li class = "list-group-item" *ngFor = "let i of topicarray.controls" (click) = "delete(param)">
+        {{i.value}} <i class="material-icons">add_a_photo</i>
       </li>
     </ul>
   </div>

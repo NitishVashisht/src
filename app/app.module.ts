@@ -24,7 +24,9 @@ import { BootstrapPanelComponent } from './ngcontent&ngcontainer/bootstrap-panel
 import { customDirective } from './directives/custom.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import {SignupFormComponent} from './signup-form/signup-form.component';
-import { FormArrayComponent } from './form-array/form-array.component'
+import { FormArrayComponent } from './form-array/form-array.component';
+import { PostsComponent } from './posts/posts.component'
+import {HttpModule} from '@angular/http'
 
 @NgModule({
   declarations: [
@@ -50,10 +52,11 @@ import { FormArrayComponent } from './form-array/form-array.component'
     customDirective,
     ContactFormComponent,
     SignupFormComponent,
-    FormArrayComponent
+    FormArrayComponent,
+    PostsComponent
   ],
   imports: [
-    BrowserModule,FormsModule,custommodule,ReactiveFormsModule
+    BrowserModule,FormsModule,custommodule,ReactiveFormsModule,HttpModule
   ],
   providers: [CourseService,AuthorsService],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+<div>
+  <input type="text" class = "form-control" (keyup.enter)= "create(input)" #input>
+  <ul class="list-group">
+    <li *ngFor = "let i of posts; index as z" class="list-group-item">
+     {{z+1}}.{{i.title}}.{{i.}}
+    </li>
+  </ul>
+</div>
