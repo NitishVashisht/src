@@ -1,8 +1,10 @@
 <div>
   <input type="text" class = "form-control" (keyup.enter)= "create(input)" #input>
   <ul class="list-group">
-    <li *ngFor = "let i of posts; index as z" class="list-group-item">
-     {{z+1}}.{{i.title}}.{{i.}}
+    <li *ngFor = "let i of postsarray; index as z" class="list-group-item">
+     {{z+1}}.{{i.title}} <button class = 'btn btn-sm btn-danger' (click) = "delete(i)" style ="float: right">Del</button>
+     <button class = 'btn btn-sm btn-danger' (click) = "update_put(i)" style="float: right">upd_put</button>
+     <button class = 'btn btn-sm btn-danger' (click) = "update_patch(i)" style="float: right">upd_patch</button>
     </li>
   </ul>
 </div>

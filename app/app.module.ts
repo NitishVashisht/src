@@ -1,3 +1,4 @@
+import { CustomErrorHandler } from './posts/CustomErrorHandler';
 import { implementationComponent } from './directives/implementation.component';
 import { NoneComponent } from './View_encapsulation&shadow_dom/none.component';
 import { EmulatedComponent } from './View_encapsulation&shadow_dom/emulated.component';
@@ -12,7 +13,7 @@ import { CourseService } from './course.service';
 import { CourseComponent } from './course.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ClassbindingComponent } from './classbinding/classbinding.component';
@@ -27,6 +28,8 @@ import {SignupFormComponent} from './signup-form/signup-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { PostsComponent } from './posts/posts.component'
 import {HttpModule} from '@angular/http'
+import { CrudopsService } from './services/crudops.service';
+import { CrudopsComponent } from './posts/crudops.component';
 
 @NgModule({
   declarations: [
@@ -53,12 +56,18 @@ import {HttpModule} from '@angular/http'
     ContactFormComponent,
     SignupFormComponent,
     FormArrayComponent,
-    PostsComponent
+    PostsComponent,CrudopsComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule,ReactiveFormsModule,HttpModule
   ],
-  providers: [CourseService,AuthorsService],
+  providers: [
+    CourseService,
+    AuthorsService,
+    CrudopsService,
+    {provide:ErrorHandler,useClass:CustomErrorHandler}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
