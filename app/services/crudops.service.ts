@@ -73,7 +73,7 @@ import { NotFoundError } from '../posts/NotFoundError';
   //which is crudops.component.ts in our case and this is true for every crud operation we created here.
   }
 
-  create(post){
+  create(post:{[key:string]:string}){ //create object taking post as an argument which is is of type key value pair.
      return this.httpobject.post(this.Wrongurl,JSON.stringify(post))
             .catch((err:Response)=>{
               if(err.status === 400)

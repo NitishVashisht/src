@@ -30,6 +30,9 @@ import { PostsComponent } from './posts/posts.component'
 import {HttpModule} from '@angular/http'
 import { CrudopsService } from './services/crudops.service';
 import { CrudopsComponent } from './posts/crudops.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GitComponentComponent } from './git-component/git-component.component';
+import { GitServiceService } from './services/git-service.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,7 @@ import { CrudopsComponent } from './posts/crudops.component';
     ContactFormComponent,
     SignupFormComponent,
     FormArrayComponent,
-    PostsComponent,CrudopsComponent
+    PostsComponent,CrudopsComponent,NavbarComponent, GitComponentComponent
   ],
   imports: [
     BrowserModule,FormsModule,custommodule,ReactiveFormsModule,HttpModule
@@ -65,7 +68,8 @@ import { CrudopsComponent } from './posts/crudops.component';
     CourseService,
     AuthorsService,
     CrudopsService,
-    {provide:ErrorHandler,useClass:CustomErrorHandler}
+    {provide:ErrorHandler,useClass:CustomErrorHandler},
+    GitServiceService
 
   ],
   bootstrap: [AppComponent]

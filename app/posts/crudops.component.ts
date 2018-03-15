@@ -47,7 +47,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotFoundError } from './NotFoundError';
 
 @Component({
-  selector: 'app-crudops',
+  selector: 'app-crudops',  
   templateUrl: './crudops.component.html',
 })
 export class CrudopsComponent implements OnInit{
@@ -61,7 +61,7 @@ export class CrudopsComponent implements OnInit{
  })}
 
    create(input:HTMLInputElement){ //binded with event keyup.enter
-   let post = {title:input.value};
+   let post = {'title':input.value};
     this.crudops.create(post)
     .subscribe(response=>{
       this.postsarray.splice(0,0,post);
