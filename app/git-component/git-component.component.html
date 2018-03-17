@@ -1,11 +1,17 @@
 <div *ngFor="let follower of followers" class="media">
     <div class="media-left">
-      <a href="#">
+      <a [routerLink]= "['/followers',follower.id]">
         <img class="avatar media-object" src="{{ follower.avatar_url }}" alt="...">
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{ follower.login }}</h4>
-      <a href="follower.html_url">{{ follower.html_url }}</a>
+      <h4 class="media-heading">
+        <a [routerLink] = "['/followers',follower.id,follower.login]"> {{ follower.login }}</a></h4>
+        <!--when we are using route parameters as mentioned in app.module as
+           followers/:username we use routerLink as attribute AND USE property binding syntax and instead of binding it with a string(route)
+           we should bind it with expression as array ['path',route parameters]
+           routerLink basically attaches any clickable HTML element to 
+        -->
+      <a [href]="follower.html_url">{{ follower.html_url }}</a>
     </div>
-  </div>
+</div>

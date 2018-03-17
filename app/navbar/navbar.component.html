@@ -1,10 +1,19 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Followers</a></li>
-        <li class="active"><a href="#">Posts</a><app-crudops></app-crudops></li>
+        <li routerLinkActive = "active current"><a routerLink="/followers" [queryParams]= "{page:1,order:'newest'}">
+          Followers
+        </a></li>
+        <li routerLinkActive = "active current"><a routerLink="/posts">Posts</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- routerLink to link the routes with the tags and router-outlet tag is to start routing
+routerLinkactive to make set of css classes active when it is active.
+no need to hard code the active as a css class in html.
+we can use routerLinkActive = "active current" compare to class="active"
+[queryParam]= "{page:1,order:'newest'}" these are the optional parameters
+-->

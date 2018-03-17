@@ -33,6 +33,10 @@ import { CrudopsComponent } from './posts/crudops.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GitComponentComponent } from './git-component/git-component.component';
 import { GitServiceService } from './services/git-service.service';
+import {RouterModule} from '@angular/router' ;
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
 
 @NgModule({
   declarations: [
@@ -57,20 +61,32 @@ import { GitServiceService } from './services/git-service.service';
     implementationComponent,
     customDirective,
     ContactFormComponent,
-    SignupFormComponent,
+    SignupFormComponent,  
     FormArrayComponent,
-    PostsComponent,CrudopsComponent,NavbarComponent, GitComponentComponent
+    PostsComponent,CrudopsComponent,
+    NavbarComponent, 
+    GitComponentComponent,
+    HomeComponent,
+    NotFoundComponent,
+    GithubProfileComponent
   ],
+
   imports: [
-    BrowserModule,FormsModule,custommodule,ReactiveFormsModule,HttpModule
+    BrowserModule,FormsModule,custommodule,ReactiveFormsModule,HttpModule,
+    RouterModule.forRoot([
+      { path: '',component: HomeComponent},
+      { path: 'followers/:userid/:username',component: GithubProfileComponent}, // userid and username are tokens for route parameters
+      { path: 'followers',component: GitComponentComponent},
+      { path: 'posts',component: PostsComponent},
+      { path: '**',component: NotFoundComponent}
+    ])
   ],
   providers: [
     CourseService,
     AuthorsService,
     CrudopsService,
-    {provide:ErrorHandler,useClass:CustomErrorHandler},
-    GitServiceService
-
+    //{provide:ErrorHandler,useClass:CustomErrorHandler}, // its awsome functionality
+    GitServiceService,
   ],
   bootstrap: [AppComponent]
 })
